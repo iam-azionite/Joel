@@ -89,6 +89,10 @@ else:
         }
     }
 
+CLOUDINARY_STORAGE = {"CLOUD_NAME":os.environ.get('CLOUDINARY_STORAGE'),
+"API_KEY": os.environ.get('CLOUDINARY_API_KEY'),
+"API_SECRET": os.environ.get('CLOUDINARY_API_SECRET')
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
