@@ -20,7 +20,7 @@ def cart(request):
 def add_to_cart(request,id):
     cart,created = Cart.objects.get_or_create(user=request.user)
     product = Product.objects.get(id=id)
-    if products.stock <=0:
+    if product.stock <=0:
         return redirect('products')
     cart_item,created = CartItem.objects.get_or_create(cart=cart,product=product)
     if not created:
