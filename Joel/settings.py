@@ -88,6 +88,13 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+STORAGES={'default':{"BACKEND":"cloudinary_storage.storage.MediaCloudinaryStorage"
+},
+    'staticfiles':
+        {"BACKEND":"whitenoise.storage.CompressedManifestStaticFilesStorage"
+         }
+
+}
 
 CLOUDINARY_STORAGE = {"CLOUD_NAME":os.environ.get('CLOUDINARY_STORAGE'),
 "API_KEY": os.environ.get('CLOUDINARY_API_KEY'),
