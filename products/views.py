@@ -76,7 +76,7 @@ def checkout(request):
             total=total
         )
         for item in cart_items:
-            OrderItem.objects.create(
+            order_item=OrderItem.objects.create(
                 order=order,
                 product=item.product,
                 quantity=item.quantity,
@@ -84,7 +84,7 @@ def checkout(request):
             )
         cart_items.delete()
         return redirect('order_success',id=order.id)
-    return render(request,'checkout.html',{'total':total})
+    return render(request,'checkout.html',{'total':total,'cart_items':cart_items})
 
 @login_required
 def order_success(request,id):
